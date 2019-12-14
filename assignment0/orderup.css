@@ -1,0 +1,96 @@
+	body
+	{
+		background:white;
+	}
+	
+	p
+	{
+		margin-bottom:0px;
+	}
+	.intro
+	{
+	padding-left:20px;
+	padding-top:4%;
+	}
+	.icon
+	{
+		padding:15px;
+	}
+	
+	.outline i 
+	{
+		position:absolute;
+	}
+	
+	#Tittle.loginClass
+	{
+		width: 100%;
+		font-family: sans-serif;
+		font-size: 18px;
+	}
+	
+	#username, #password, #verifypassword
+	{
+		padding-top: 8px;
+		padding-bottom: 8px;
+		width: 50%;
+		padding-left: 40px;
+
+	}
+	
+	#username 
+	{
+			margin-bottom:20px;
+
+	}
+	.container
+	{
+	background-color:#d2d3d44f;
+	padding:50px;
+	margin-top:20px;
+	}
+	
+	.login
+	{
+		text-align:center;
+		padding-left: 15%;
+		padding-right: 15%;
+	}
+	
+	#nameCotainer
+	{
+	display:-webkit-box;
+	}
+	
+	#Tittle
+	{
+		width:200px;
+	}
+	
+	.radio
+	{
+		margin-left:10px;
+	}
+	.counttag
+	{
+	background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: .8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+    border-radius: 15px 15px 15px 0;
+	}
+	
+	.outline
+	{
+	width: auto;
+    height: auto;
+    padding: 10px;
+    background-color: #1abc9c;
+	}
+	

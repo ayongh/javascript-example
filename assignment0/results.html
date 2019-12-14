@@ -1,0 +1,96 @@
+<!-- 
+Abhishek Yonghang
+COSC 617
+Assignement 0
+8/29/2019
+-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Assignment</title>
+  </head>
+  <body>
+		<div class="container">
+			<h5>Full URL</h5>
+			<p id="URL"></p><br>
+			
+			<h5>Substring URL</h5>
+			<p id="URLSubstring"></p><br>
+			
+			<h5>+ Replaced URL</h5>
+			<p id="replacePlus"></p>
+			
+			<h5>Final String</h5>
+			<p id="finalString"></p>
+		</div>
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script>
+			var URL =  window.location.href;
+
+			document.getElementById("URL").innerHTML = URL;
+			
+			var fulllength = URL.length;
+			var inexofQ = URL.indexOf("?");
+			
+			var substringURL = URL.substring(inexofQ+1, fulllength);
+			
+			document.getElementById("URLSubstring").innerHTML = substringURL;
+			var finalsplitString = replace(substringURL);
+			
+			
+			document.getElementById("replacePlus").innerHTML = finalsplitString;
+			var splitedString = finalsplitString.split("&");
+			
+			var text = "";
+			for( var a = 0; a < splitedString.length; a++)
+			{
+				text += splitedString[a] + "<br>";
+			}
+			
+			document.getElementById("finalString").innerHTML = text;
+
+			function replace(a)
+			{
+				var res  = a;
+				
+				for(var i=0; i<a.length; i++)
+				{
+
+					if (a.charAt(i) == "+")
+					{
+						res = setCharAt(res,i," ");
+					}
+				}
+				return res;
+				
+			}
+
+			function setCharAt(str,index,chr) 
+			{
+				if(index > str.length-1) return str;
+				return str.substr(0,index) + chr + str.substr(index+1);
+			}
+		</script>
+	</body>
+  
+	<style>
+	.container
+	{
+		overflow-wrap: break-word;
+		padding-top:50px;
+		padding-bottom:50px;
+	}
+	</style>
+</html>
